@@ -17,7 +17,7 @@ Products
                             <h5 class="card-title">{{ product.title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Категория: {{ product.get_category_display }}</h6>
                             <p class="card-text">Цена: {{ product.price }}</p>
-                            <a href="#" class="card-link">Подробнее...</a>
+                            <a href="{% url 'product_view' product.pk %}" class="card-link">Подробнее...</a>
                         </div>
                     </div>
                 </div>
