@@ -1,13 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block content %}
+        <div class="mb-4">
+            <h2 class="text-success">Текущие Записи</h2>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+            {% for product in products %}
+                <div class="col my-2">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Категория: {{ product.get_category_display }}</h6>
+                            <p class="card-text">Цена: {{ product.price }}</p>
+                            <a href="#" class="card-link">Подробнее...</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}
