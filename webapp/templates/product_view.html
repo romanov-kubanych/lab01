@@ -9,7 +9,7 @@ Product {{ product.pk }}
         <a class="nav-link" href='{% url 'create_view' %}'>Создать запись</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href='#'>Редактировать запись</a>
+        <a class="nav-link" href='{% url 'update_view' product.pk %}'>Редактировать запись</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-danger" href="#">Удалить запись</a>
