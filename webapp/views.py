@@ -4,7 +4,7 @@ from webapp.models import Product
 
 
 def index_view(request):
-    products = Product.objects.order_by('category')
+    products = Product.objects.all().order_by('category', 'title').filter(balance__gt=0)
     return render(request, 'index_view.html', {'products': products})
 
 
