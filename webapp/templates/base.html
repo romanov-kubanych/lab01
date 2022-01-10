@@ -22,7 +22,7 @@
           <ul class="navbar-nav">
             {% block nav %}
             <li class="nav-item">
-              <a class="nav-link" href='#'>Создать запись</a>
+              <a class="nav-link" href='{% url 'create_view' %}'>Создать запись</a>
             </li>
             {% endblock %}
           </ul>
