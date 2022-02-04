@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+from django.views.generic import DeleteView, DetailView
 
 from webapp.forms import ProductForm
 from webapp.models import Product
@@ -9,9 +11,12 @@ def index_view(request):
     return render(request, 'products/index.html', {'products': products})
 
 
-def product_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'products/view.html', {'product': product})
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'products/view.html'
+# def product_view(request, pk):
+#     product = get_object_or_404(Product, pk=pk)
+#     return render(request, 'products/view.html', {'product': product})
 
 
 def create_view(request):
@@ -59,10 +64,9 @@ def update_view(request, pk):
         return render(request, 'products/update.html', {'form': form, 'product': product})
 
 
-def delete_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    if request.method == 'GET':
-        return render(request, 'products/delete.html', {'product': product})
-    else:
-        product.delete()
-        return redirect('product_index')
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'products/delete.html'
+
+    def get_success_url(self):
+        return reverse('product_index')
