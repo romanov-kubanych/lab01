@@ -44,5 +44,10 @@
             </tbody>
         </table>
     </div>
+    <div>
+        <form action="{% url 'order_view' %}" method="post">
+            {% include 'partial/form.html' with button_text='Оформить заказ' %}
+        </form>
+    </div>
 
 {% endblock %}

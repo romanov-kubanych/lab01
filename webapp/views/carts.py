@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, get_object_or_404, render
 from django.views import View
 
+from forms import ClientForm
 from webapp.models import Product, Cart
 
 
@@ -25,6 +26,7 @@ class CartAddView(View):
 class CartIndexView(View):
     def get(self, request, *args, **kwargs):
         carts = Cart.objects.all()
+        form = ClientForm
         records = []
         sum = 0
         for cart in carts:
@@ -32,7 +34,8 @@ class CartIndexView(View):
         context = {
             'records': records,
             'carts': carts,
-            'sum': sum
+            'sum': sum,
+            'form': form
         }
         return render(request, 'carts/index.html', context)
 
