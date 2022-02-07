@@ -33,3 +33,17 @@ class Cart(models.Model):
         db_table = 'Cart'
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
+
+
+class Client(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Имя')
+    address = models.CharField(max_length=100, verbose_name='Адрес')
+    telephone = models.CharField(max_length=20, verbose_name='Телефон')
+
+    def __str__(self):
+        return f'{self.pk}. {self.name}: {self.address}'
+
+    class Meta:
+        db_table = 'Clients'
+        verbose_name = 'Клиент'
+        verbose_name_plural = 'Клиенты'
