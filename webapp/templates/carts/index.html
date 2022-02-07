@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block nav %}
+{% endblock %}
+
+{% block content %}
+    <div class="my-4">
+            <h2 class="text-success text-center">Содержимое корзины</h2>
+    </div>
+    <div class="mt-5">
+        <table class="table mb-4">
+            <thead>
+                <tr>
+                  <th scope="col">Товар</th>
+                  <th scope="col">Цена</th>
+                  <th scope="col">Количество</th>
+                  <th scope="col">Сумма</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cart in carts %}
+                    <tr>
+                        <td>{{ cart.product.title }}</td>
+                        <td>{{ cart.product.price }}</td>
+                        <td>{{ cart.number }}</td>
+                        <td></td>
+                        <td><form action="{% url 'cart_delete' cart.pk %}" method="post">
+                                    {% csrf_token %}
+                                    <p><input type="submit" value="Удалить"></p>
+                            </form></td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Итого</td>
+                        <td>{{ sum }}</td>
+                        <td></td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
