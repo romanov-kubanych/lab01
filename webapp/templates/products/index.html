@@ -24,7 +24,7 @@ Products
                             <a href="{% url 'product_view' product.pk %}" class="btn btn-warning w-100 my-2">Подробнее</a>
                             <form action="{% url 'cart_add' product.pk %}" method="post">
                                 {% csrf_token %}
-                                <p><input type="submit" value=" Добавить в корзину "></p>
+                                <p><input class="btn btn-primary w-100" type="submit" value=" Добавить в корзину "></p>
                             </form>
                         </div>
                     </div>
