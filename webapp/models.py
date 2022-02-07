@@ -17,3 +17,16 @@ class Product(models.Model):
         db_table = 'Products'
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+
+class Cart(models.Model):
+    product = models.ForeignKey('webapp.Product',
+                                on_delete=models.CASCADE,
+                                verbose_name='Товар',
+                                related_name='cart')
+    number = models.IntegerField(verbose_name='Количество ')
+
+    class Meta:
+        db_table = 'Cart'
+        verbose_name = 'Корзина'
+        verbose_name_plural = 'Корзины'
