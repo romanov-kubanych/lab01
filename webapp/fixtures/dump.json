@@ -1,346 +1,416 @@
 [
 {
-    "model": "webapp.product",
-    "pk": 1,
-    "fields": {
-        "title": "Samsung",
-        "description": "Galaxy S21",
-        "category": "smartphone",
-        "balance": 22,
-        "price": "100.22"
-    }
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "title": "Samsung",
+    "description": "Galaxy S21",
+    "category": "smartphone",
+    "balance": 4,
+    "price": "100.22"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 2,
-    "fields": {
-        "title": "Apple Iphone 12",
-        "description": "",
-        "category": "smartphone",
-        "balance": 10,
-        "price": "500.66"
-    }
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "title": "Apple Iphone 12",
+    "description": "",
+    "category": "smartphone",
+    "balance": -11,
+    "price": "500.66"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 3,
-    "fields": {
-        "title": "Samsung TV",
-        "description": "",
-        "category": "tv",
-        "balance": 5,
-        "price": "600.00"
-    }
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "title": "Samsung TV",
+    "description": "",
+    "category": "tv",
+    "balance": 3,
+    "price": "600.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 4,
-    "fields": {
-        "title": "HP PRO500",
-        "description": "123",
-        "category": "notebook",
-        "balance": 0,
-        "price": "198.00"
-    }
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "title": "HP PRO500",
+    "description": "123",
+    "category": "notebook",
+    "balance": 0,
+    "price": "198.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 5,
-    "fields": {
-        "title": "Powerbank",
-        "description": "",
-        "category": "other",
-        "balance": 500,
-        "price": "25.00"
-    }
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "title": "Powerbank",
+    "description": "",
+    "category": "other",
+    "balance": 498,
+    "price": "25.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 6,
-    "fields": {
-        "title": "Xiomi",
-        "description": "",
-        "category": "tv",
-        "balance": 23,
-        "price": "500.00"
-    }
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "title": "Xiomi",
+    "description": "",
+    "category": "tv",
+    "balance": 23,
+    "price": "500.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 7,
-    "fields": {
-        "title": "Hp",
-        "description": "Pro",
-        "category": "notebook",
-        "balance": 0,
-        "price": "200.00"
-    }
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "title": "Hp",
+    "description": "Pro",
+    "category": "notebook",
+    "balance": 0,
+    "price": "200.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 11,
-    "fields": {
-        "title": "123123",
-        "description": "123123",
-        "category": "smartphone",
-        "balance": 123123,
-        "price": "12.00"
-    }
+  "model": "webapp.product",
+  "pk": 11,
+  "fields": {
+    "title": "123123",
+    "description": "123123",
+    "category": "smartphone",
+    "balance": 123119,
+    "price": "12.00"
+  }
 },
 {
-    "model": "webapp.product",
-    "pk": 14,
-    "fields": {
-        "title": "Test",
-        "description": "123",
-        "category": "other",
-        "balance": 123,
-        "price": "1.00"
-    }
+  "model": "webapp.product",
+  "pk": 14,
+  "fields": {
+    "title": "Test",
+    "description": "123",
+    "category": "other",
+    "balance": 107,
+    "price": "1.00"
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 1,
-    "fields": {
-        "name": "rerer",
-        "address": "erer",
-        "telephone": "erer",
-        "create_at": "2022-02-07T12:21:10.846Z"
-    }
+  "model": "webapp.order",
+  "pk": 1,
+  "fields": {
+    "product": 14,
+    "number": 3,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 2,
-    "fields": {
-        "name": "������� �������",
-        "address": "�.���-��� ��.����������",
-        "telephone": "123",
-        "create_at": "2022-02-07T12:22:23.548Z"
-    }
+  "model": "webapp.order",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "number": 3,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 3,
-    "fields": {
-        "name": "werwer",
-        "address": "werewr",
-        "telephone": "werwer",
-        "create_at": "2022-02-07T12:26:01.637Z"
-    }
+  "model": "webapp.order",
+  "pk": 3,
+  "fields": {
+    "product": 14,
+    "number": 3,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 4,
-    "fields": {
-        "name": "123123",
-        "address": "123123",
-        "telephone": "123123",
-        "create_at": "2022-02-07T12:27:40.528Z"
-    }
+  "model": "webapp.order",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "number": 3,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 5,
-    "fields": {
-        "name": "123123",
-        "address": "123",
-        "telephone": "123123",
-        "create_at": "2022-02-07T12:29:05.482Z"
-    }
+  "model": "webapp.order",
+  "pk": 5,
+  "fields": {
+    "product": 14,
+    "number": 3,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 6,
-    "fields": {
-        "name": "qwe",
-        "address": "qwe",
-        "telephone": "qwe",
-        "create_at": "2022-02-07T12:30:51.115Z"
-    }
+  "model": "webapp.order",
+  "pk": 6,
+  "fields": {
+    "product": 5,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 7,
-    "fields": {
-        "name": "123",
-        "address": "123",
-        "telephone": "123",
-        "create_at": "2022-02-07T12:32:04.713Z"
-    }
+  "model": "webapp.order",
+  "pk": 7,
+  "fields": {
+    "product": 4,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 8,
-    "fields": {
-        "name": "123",
-        "address": "123",
-        "telephone": "123",
-        "create_at": "2022-02-07T12:33:56.779Z"
-    }
+  "model": "webapp.order",
+  "pk": 8,
+  "fields": {
+    "product": 4,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 9,
-    "fields": {
-        "name": "123",
-        "address": "123",
-        "telephone": "123",
-        "create_at": "2022-02-07T12:34:38.797Z"
-    }
+  "model": "webapp.order",
+  "pk": 9,
+  "fields": {
+    "product": 4,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 10,
-    "fields": {
-        "name": "123123",
-        "address": "123123",
-        "telephone": "123123123",
-        "create_at": "2022-02-07T12:35:32.018Z"
-    }
+  "model": "webapp.order",
+  "pk": 10,
+  "fields": {
+    "product": 4,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.client",
-    "pk": 11,
-    "fields": {
-        "name": "123123",
-        "address": "123123",
-        "telephone": "123123123",
-        "create_at": "2022-02-07T12:37:15.621Z"
-    }
+  "model": "webapp.order",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 1,
-    "fields": {
-        "client": 1,
-        "product": 14,
-        "number": 3
-    }
+  "model": "webapp.order",
+  "pk": 12,
+  "fields": {
+    "product": 5,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 2,
-    "fields": {
-        "client": 2,
-        "product": 4,
-        "number": 3
-    }
+  "model": "webapp.order",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 3,
-    "fields": {
-        "client": 2,
-        "product": 14,
-        "number": 3
-    }
+  "model": "webapp.order",
+  "pk": 14,
+  "fields": {
+    "product": 5,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 4,
-    "fields": {
-        "client": 3,
-        "product": 4,
-        "number": 3
-    }
+  "model": "webapp.order",
+  "pk": 15,
+  "fields": {
+    "product": 11,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 5,
-    "fields": {
-        "client": 3,
-        "product": 14,
-        "number": 3
-    }
+  "model": "webapp.order",
+  "pk": 16,
+  "fields": {
+    "product": 5,
+    "number": 1,
+    "client": null
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 6,
-    "fields": {
-        "client": 4,
-        "product": 5,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 17,
+  "fields": {
+    "product": 1,
+    "number": 3,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 7,
-    "fields": {
-        "client": 5,
-        "product": 4,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 18,
+  "fields": {
+    "product": 2,
+    "number": 7,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 8,
-    "fields": {
-        "client": 6,
-        "product": 4,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 19,
+  "fields": {
+    "product": 3,
+    "number": 1,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 9,
-    "fields": {
-        "client": 7,
-        "product": 4,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 20,
+  "fields": {
+    "product": 14,
+    "number": 4,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 10,
-    "fields": {
-        "client": 8,
-        "product": 4,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 21,
+  "fields": {
+    "product": 1,
+    "number": 3,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 11,
-    "fields": {
-        "client": 9,
-        "product": 4,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 22,
+  "fields": {
+    "product": 1,
+    "number": 3,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 12,
-    "fields": {
-        "client": 10,
-        "product": 5,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 23,
+  "fields": {
+    "product": 2,
+    "number": 7,
+    "client": 3
+  }
 },
 {
-    "model": "webapp.order",
-    "pk": 13,
-    "fields": {
-        "client": 11,
-        "product": 5,
-        "number": 1
-    }
+  "model": "webapp.order",
+  "pk": 24,
+  "fields": {
+    "product": 3,
+    "number": 1,
+    "client": 3
+  }
 },
 {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-        "password": "pbkdf2_sha256$320000$aBGT0eIZSbuQLco0PHV9PO$PjnaOb+e7J7aJLTTdDNJdO9qjuZlU3+kS3eYGW12ptE=",
-        "last_login": "2022-01-07T16:35:08.053Z",
-        "is_superuser": true,
-        "username": "admin",
-        "first_name": "",
-        "last_name": "",
-        "email": "",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2022-01-07T16:34:42.665Z",
-        "groups": [],
-        "user_permissions": []
-    }
+  "model": "webapp.order",
+  "pk": 25,
+  "fields": {
+    "product": 14,
+    "number": 4,
+    "client": 3
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 26,
+  "fields": {
+    "product": 14,
+    "number": 1,
+    "client": 3
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 27,
+  "fields": {
+    "product": 14,
+    "number": 2,
+    "client": 3
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 28,
+  "fields": {
+    "product": 14,
+    "number": 3,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 29,
+  "fields": {
+    "product": 11,
+    "number": 1,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 30,
+  "fields": {
+    "product": 1,
+    "number": 4,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 31,
+  "fields": {
+    "product": 1,
+    "number": 3,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 32,
+  "fields": {
+    "product": 1,
+    "number": 1,
+    "client": 3
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 33,
+  "fields": {
+    "product": 1,
+    "number": 1,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 34,
+  "fields": {
+    "product": 11,
+    "number": 2,
+    "client": null
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 35,
+  "fields": {
+    "product": 14,
+    "number": 2,
+    "client": 2
+  }
 }
 ]
