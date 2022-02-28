@@ -1,6 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 STATUS_CHOICES = [('other', 'Разное'), ('smartphone', 'Смартфон'), ('notebook', 'Ноутбук'), ('tv', 'Телевизор')]
+User = get_user_model()
 
 
 class Product(models.Model):
@@ -54,15 +56,17 @@ class Client(models.Model):
 
 
 class Order(models.Model):
-    client = models.ForeignKey('webapp.Client',
-                               on_delete=models.CASCADE,
-                               verbose_name='Клиент',
-                               related_name='order')
     product = models.ForeignKey('webapp.Product',
                                 on_delete=models.CASCADE,
                                 verbose_name='Товар',
                                 related_name='order')
     number = models.IntegerField(verbose_name='Количество товара')
+    client = models.ForeignKey(User,
+                               on_delete=models.CASCADE,
+                               verbose_name='Клиент',
+                               related_name='order',
+                               null=True,
+                               blank=True)
 
     class Meta:
         db_table = 'Orders'

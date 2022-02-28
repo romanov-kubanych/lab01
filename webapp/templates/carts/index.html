@@ -8,45 +8,70 @@
 
 {% block content %}
     <div class="my-4">
-            <h2 class="text-success text-center">Содержимое корзины</h2>
+        <h2 class="text-success text-center">Содержимое корзины</h2>
     </div>
     <div class="mt-5">
         <table class="table mb-4">
             <thead>
-                <tr>
-                  <th scope="col">Товар</th>
-                  <th scope="col">Цена</th>
-                  <th scope="col">Количество</th>
-                  <th scope="col">Сумма</th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th scope="col">Товар</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Сумма</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                {% for cart in carts %}
-                    <tr>
-                        <td>{{ cart.product.title }}</td>
-                        <td>{{ cart.product.price }}</td>
-                        <td>{{ cart.number }}</td>
-                        <td>{{ cart.get_sum }}</td>
-                        <td><form action="{% url 'cart_delete' cart.pk %}" method="post">
-                                    {% csrf_token %}
-                                    <p><input type="submit" value="Удалить"></p>
-                            </form></td>
-                    </tr>
-                {% endfor %}
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Итого</td>
-                        <td>{{ sum }}</td>
-                        <td></td>
-                    </tr>
+            {% for item, value in records.items %}
+                <tr>
+                    <td>{{ value.title }}</td>
+                    <td>{{ value.price }}</td>
+                    {% for i, j in quantity.items %}
+                        {% if i == item %}
+                            <td>{{ j }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    {% for k, v in sum.items %}
+                        {% if k == item %}
+                            <td>{{ v }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td>
+                        <form action="{% url 'cart_delete' value.pk %}" method="post">
+                            {% csrf_token %}
+                            <p><input type="submit" value="Удалить"></p>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            {#            {% for cart in carts %}#}
+            {#                <tr>#}
+            {#                    <td>{{ cart.product.title }}</td>#}
+            {#                    <td>{{ cart.product.price }}</td>#}
+            {#                    <td>{{ cart.number }}</td>#}
+            {#                    <td>{{ cart.get_sum }}</td>#}
+            {#                    <td>#}
+            {#                        <form action="{% url 'cart_delete' cart.pk %}" method="post">#}
+            {#                            {% csrf_token %}#}
+            {#                            <p><input type="submit" value="Удалить"></p>#}
+            {#                        </form>#}
+            {#                    </td>#}
+            {#                </tr>#}
+            {#            {% endfor %}#}
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Итого</td>
+                <td>{{ total }}</td>
+                <td></td>
+            </tr>
             </tbody>
         </table>
     </div>
     <div>
         <form action="{% url 'order_view' %}" method="post">
-            {% include 'partial/form.html' with button_text='Оформить заказ' %}
+            {% csrf_token %}
+            <input class="btn btn-success w-100" type="submit" value='Оформить заказ'/>
         </form>
     </div>
 

@@ -21,9 +21,3 @@ class ProductForm(forms.ModelForm):
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=30, required=False, label="Найти")
 
-
-class ClientForm(forms.ModelForm):
-    class Meta:
-        model = Client
-        exclude = []
-
