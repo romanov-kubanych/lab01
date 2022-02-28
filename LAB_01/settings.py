@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'LAB_01.wsgi.application'
 
+LOGOUT_REDIRECT_URL = "product_index"
+LOGIN_REDIRECT_URL = "product_index"
+
+LOGIN_URL = 'accounts:login'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
