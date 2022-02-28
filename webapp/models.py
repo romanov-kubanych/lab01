@@ -24,37 +24,6 @@ class Product(models.Model):
         verbose_name_plural = 'Продукты'
 
 
-class Cart(models.Model):
-    product = models.ForeignKey('webapp.Product',
-                                on_delete=models.CASCADE,
-                                verbose_name='Товар',
-                                related_name='cart')
-    number = models.IntegerField(verbose_name='Количество')
-
-    class Meta:
-        db_table = 'Cart'
-        verbose_name = 'Корзина'
-        verbose_name_plural = 'Корзины'
-
-    def get_sum(self):
-        return self.product.price * self.number
-
-
-class Client(models.Model):
-    name = models.CharField(max_length=50, verbose_name='Имя')
-    address = models.CharField(max_length=100, verbose_name='Адрес')
-    telephone = models.CharField(max_length=20, verbose_name='Телефон')
-    create_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
-
-    def __str__(self):
-        return f'{self.pk}. {self.name}: {self.address}'
-
-    class Meta:
-        db_table = 'Clients'
-        verbose_name = 'Клиент'
-        verbose_name_plural = 'Клиенты'
-
-
 class Order(models.Model):
     product = models.ForeignKey('webapp.Product',
                                 on_delete=models.CASCADE,

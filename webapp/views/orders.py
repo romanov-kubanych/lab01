@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import View
 
-from webapp.models import Client, Cart, Order, Product
+from webapp.models import Order, Product
 
 
 class OrderView(View):
