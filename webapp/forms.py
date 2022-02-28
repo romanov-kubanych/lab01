@@ -12,7 +12,7 @@ class ProductForm(forms.ModelForm):
 
     def clean_balance(self):
         balance = self.cleaned_data['balance']
-        if balance <= 0:
+        if balance < 0:
             raise ValidationError(
                 f"Значение баланса должно быть больше нуля, '{balance}' не подходит")
         return balance

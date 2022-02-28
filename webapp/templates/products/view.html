@@ -1,34 +1,40 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Product {{ product.pk }}
+    Product {{ product.pk }}
 {% endblock %}
 
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href='{% url 'product_create' %}'>Создать запись</a>
+        <a class="nav-link" href='{% url 'product_create' %}'>Создать продукт</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href='{% url 'product_update' product.pk %}'>Редактировать запись</a>
+        <a class="nav-link" href='{% url 'product_update' product.pk %}'>Изменить продукт</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-danger" href="{% url 'product_delete' product.pk %}">Удалить запись</a>
+        <a class="nav-link text-danger" href="{% url 'product_delete' product.pk %}">Удалить продукт</a>
+    </li>
+    <li class="nav-item">
+        <form action="{% url 'cart_add' product.pk %}" method="post">
+            {% csrf_token %}
+            <a><input class="nav-link" type="submit" value=" Добавить в корзину "></a>
+        </form>
     </li>
 {% endblock %}
 
 {% block content %}
-        <div class="text-center my-5">
-            <h1 class="text-success"> Просмотр записи №{{ product.id }}</h1>
-        </div>
-        <div class="alert alert-success" role="alert">
-            <h6>Наименование товара: {{ product.title }}</h6>
-            <h6>Категория товара: {{ product.get_category_display }}</h6>
-            <p>Остаток: {{ product.balance }}</p>
-            <p>Цена: {{ product.price }}</p>
-            {% if product.description%}
-                <p>Описание товара: {{ product.description }}</p>
-            {% else %}
-                <p>Описание товара: НЕТ</p>
-            {% endif %}
-        </div>
+    <div class="text-center my-5">
+        <h1 class="text-success"> Просмотр записи №{{ product.id }}</h1>
+    </div>
+    <div class="alert alert-success" role="alert">
+        <h6>Наименование товара: {{ product.title }}</h6>
+        <h6>Категория товара: {{ product.get_category_display }}</h6>
+        <p>Остаток: {{ product.balance }}</p>
+        <p>Цена: {{ product.price }}</p>
+        {% if product.description %}
+            <p>Описание товара: {{ product.description }}</p>
+        {% else %}
+            <p>Описание товара: НЕТ</p>
+        {% endif %}
+    </div>
 {% endblock %}

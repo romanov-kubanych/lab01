@@ -24,9 +24,7 @@ class ProductIndexView(ListView):
         if self.search_value:
             query = Q(title__icontains=self.search_value) | Q(category__icontains=self.search_value)
             queryset = queryset.filter(query)
-        else:
-            queryset = queryset.filter(balance__gt=0)
-        return queryset.order_by('category', 'title')
+        return queryset.filter(balance__gt=0).order_by('category', 'title')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)

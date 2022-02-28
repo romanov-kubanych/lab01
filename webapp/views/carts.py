@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, get_object_or_404, render
 from django.views import View
 
-from forms import ClientForm
+from webapp.forms import ClientForm
 from webapp.models import Product, Cart
 
 
@@ -30,7 +30,7 @@ class CartIndexView(View):
         records = []
         sum = 0
         for cart in carts:
-            sum = sum + cart.number*cart.product.price
+            sum += cart.get_sum()
         context = {
             'records': records,
             'carts': carts,

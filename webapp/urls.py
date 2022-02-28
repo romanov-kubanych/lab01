@@ -1,8 +1,8 @@
 from django.urls import path
 
-from views import CartAddView, CartIndexView, CartDeleteView
-from views.orders import OrderView
-from webapp.views import ProductIndexView, ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView
+from .views.carts import CartAddView, CartIndexView, CartDeleteView
+from .views.orders import OrderView
+from .views import ProductIndexView, ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView
 
 urlpatterns = [
     path('', ProductIndexView.as_view(), name="product_index"),

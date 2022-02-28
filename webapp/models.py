@@ -34,6 +34,9 @@ class Cart(models.Model):
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
 
+    def get_sum(self):
+        return self.product.price * self.number
+
 
 class Client(models.Model):
     name = models.CharField(max_length=50, verbose_name='Имя')
