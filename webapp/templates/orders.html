@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="my-4">
+        <h2 class="text-success text-center">История заказов</h2>
+    </div>
+    <div class="mt-5">
+        <table class="table mb-4">
+            <thead>
+            <tr>
+                <th scope="col">Товар</th>
+                <th scope="col">Количество</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in objects %}
+                <tr>
+                    <td>{{ object.product.title }}</td>
+                    <td>{{ object.number }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

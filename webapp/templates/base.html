@@ -45,6 +45,9 @@
                                 <a class="nav-link" href='{% url 'cart_view' %}'>Открыть корзину</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href='{% url 'my_order_view' %}'>История заказов</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link"
                                    href="{% url 'accounts:detail' user.pk %}">Привет {{ user.username }}!</a>
                             </li>

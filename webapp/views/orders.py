@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import ListView
 
 from webapp.models import Order, Product
 
@@ -26,15 +27,17 @@ class OrderView(View):
 
         products = {}
         request.session['products'] = products
-
-        # carts = Cart.objects.all()
-        # for cart in carts:
-        #     order = Order()
-        #     order.client = new_client
-        #     order.product = cart.product
-        #     order.number = cart.number
-        #     order.save()
-        #     cart.product.balance = cart.product.balance - cart.number
-        #     cart.product.save()
-        #     cart.delete()
         return render(request, 'order/index.html')
+
+
+class MyOrderView(ListView):
+    model = Order
+    template_name = 'orders.html'
+    permission_required = 'auth.view_user'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        objects = Order.objects.filter(client_id=self.request.user.id)
+        context["objects"] = objects
+        return context
+
